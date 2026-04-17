@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx prisma *)",
+      "Bash(npx tsc *)",
+      "Bash(rm -rf .next)",
+      "Bash(npx next *)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(cat postcss.config.mjs)",
+      "Bash(cat postcss.config.js)",
+      "Bash(ls .next/static/css/)",
+      "Bash(wc -c .next/static/css/*.css)",
+      "Bash(node -e \"const tw = require\\('tailwindcss'\\); console.log\\(tw.version || 'no version'\\)\")",
+      "Bash(npx tailwindcss *)",
+      "Bash(curl -s http://localhost:3005/)",
+      "Bash(kill %1)",
+      "Bash(ls .next/static/css/app/)",
+      "Bash(wc -c .next/static/css/app/*.css)",
+      "Bash(node -e ' *)",
+      "Bash(grep -o \".\\\\{0,50\\\\}\\\\.flex.\\\\{0,50\\\\}\" .next/static/css/app/layout.css)",
+      "Bash(grep -o \".\\\\{0,40\\\\}box-sizing.\\\\{0,40\\\\}\" .next/static/css/app/layout.css)",
+      "Bash(grep -o \".\\\\{0,20\\\\}\\\\.sticky.\\\\{0,30\\\\}\" .next/static/css/app/layout.css)",
+      "Bash(grep -o \".\\\\{0,20\\\\}\\\\.bg-white.\\\\{0,30\\\\}\" .next/static/css/app/layout.css)",
+      "Bash(cat src/lib/search/*.ts)",
+      "Bash(ls *)",
+      "Bash",
+      "Write"
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ─────────────────────────────────────────────
+   Explicit source scanning (Tailwind v4)
+   ───────────────────────────────────────────── */
+@source "../components/**/*.{ts,tsx}";
+@source "../hooks/**/*.{ts,tsx}";
+@source "../lib/**/*.{ts,tsx}";
+
+/* ─────────────────────────────────────────────
+   Dark mode variant
+   ───────────────────────────────────────────── */
+@custom-variant dark (&:is(.dark *));
+
+/* ─────────────────────────────────────────────
+   Brand & UI tokens  (CSS custom properties)
+   ───────────────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --brand-primary: #00B4FF;
+  --brand-primary-dark: #0066AA;
+  --brand-primary-light: #66D4FF;
+  --brand-bg-dark: #0A0F1A;
+  --brand-surface: #F0F7FF;
+  --brand-text-primary: #1A1A2E;
+  --brand-text-secondary: #64748B;
+  --brand-success: #10B981;
+  --brand-warning: #F59E0B;
+  --brand-error: #EF4444;
+
+  /* SuitScore tier colors */
+  --suitscore-gold: #EAB308;
+  --suitscore-podium: #6366F1;
+  --suitscore-prelim: #22C55E;
+  --suitscore-backup: #F97316;
+  --suitscore-practice: #EF4444;
+
+  /* shadcn/ui-compatible semantic tokens */
+  --background: #ffffff;
+  --foreground: #1A1A2E;
+  --card: #ffffff;
+  --card-foreground: #1A1A2E;
+  --popover: #ffffff;
+  --popover-foreground: #1A1A2E;
+  --primary: #00B4FF;
+  --primary-foreground: #ffffff;
+  --secondary: #F0F7FF;
+  --secondary-foreground: #1A1A2E;
+  --muted: #F0F7FF;
+  --muted-foreground: #64748B;
+  --accent: #E0F5FF;
+  --accent-foreground: #0066AA;
+  --destructive: #EF4444;
+  --destructive-foreground: #ffffff;
+  --border: #E2EBF0;
+  --input: #E2EBF0;
+  --ring: #00B4FF;
+
+  /* Radius scale */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Charts */
+  --chart-1: #00B4FF;
+  --chart-2: #6366F1;
+  --chart-3: #22C55E;
+  --chart-4: #F97316;
+  --chart-5: #EAB308;
+
+  /* Sidebar */
+  --sidebar: #F0F7FF;
+  --sidebar-foreground: #1A1A2E;
+  --sidebar-primary: #00B4FF;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #E0F5FF;
+  --sidebar-accent-foreground: #0066AA;
+  --sidebar-border: #E2EBF0;
+  --sidebar-ring: #00B4FF;
+}
+
+.dark {
+  --background: #0A0F1A;
+  --foreground: #F0F9FF;
+  --card: #111827;
+  --card-foreground: #F0F9FF;
+  --popover: #111827;
+  --popover-foreground: #F0F9FF;
+  --primary: #00B4FF;
+  --primary-foreground: #0A0F1A;
+  --secondary: #1A2540;
+  --secondary-foreground: #F0F9FF;
+  --muted: #1A2540;
+  --muted-foreground: #94A3B8;
+  --accent: #0D2040;
+  --accent-foreground: #66D4FF;
+  --destructive: #EF4444;
+  --destructive-foreground: #ffffff;
+  --border: #1E3050;
+  --input: #1E3050;
+  --ring: #00B4FF;
+
+  --sidebar: #0D1525;
+  --sidebar-foreground: #F0F9FF;
+  --sidebar-primary: #00B4FF;
+  --sidebar-primary-foreground: #0A0F1A;
+  --sidebar-accent: #1A2540;
+  --sidebar-accent-foreground: #66D4FF;
+  --sidebar-border: #1E3050;
+  --sidebar-ring: #00B4FF;
+}
+
+/* ─────────────────────────────────────────────
+   Tailwind v4 theme, maps CSS vars to utilities
+   ───────────────────────────────────────────── */
+@theme inline {
+  /* Colors */
+  --color-background:   var(--background);
+  --color-foreground:   var(--foreground);
+  --color-card:         var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover:      var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary:      var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:    var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:        var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent:       var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive:  var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:       var(--border);
+  --color-input:        var(--input);
+  --color-ring:         var(--ring);
+
+  /* Brand */
+  --color-brand:        var(--brand-primary);
+  --color-brand-dark:   var(--brand-primary-dark);
+  --color-brand-light:  var(--brand-primary-light);
+
+  /* Radius */
+  --radius-sm:  var(--radius-sm);
+  --radius-md:  var(--radius-md);
+  --radius-lg:  var(--radius-lg);
+  --radius-xl:  var(--radius-xl);
+
+  /* Font */
+  --font-sans: var(--font-sans);
+}
+
+/* ─────────────────────────────────────────────
+   Base styles
+   ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────────
+   Custom utility classes
+   ───────────────────────────────────────────── */
+.brand-gradient {
+  background: linear-gradient(135deg, #0044AA 0%, #00CCFF 100%);
+}
+
+.brand-gradient-text {
+  background: linear-gradient(135deg, #0044AA 0%, #00CCFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brand-surface {
+  background-color: var(--background);
+}
